@@ -106,6 +106,9 @@ RUN set -ex ;\
     # set proper permission to run entrypoint script
     chmod a+x /entrypoint.sh
 
+RUN python -m pip install --upgrade pip 
+RUN python -m pip install --upgrade setuptools
+
 # This script installs APK and Pip prerequisites on container start, or ONBUILD. Notes:
 #   * Reads the -a flags and /apk-requirements.txt for install requests
 #   * Reads the -b flags and /build-requirements.txt for build packages -- removed when build is complete
