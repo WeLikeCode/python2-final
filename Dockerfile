@@ -108,6 +108,7 @@ RUN set -ex ;\
 
 RUN python -m pip install --upgrade pip 
 RUN python -m pip install --upgrade setuptools
+RUN rm -f /requirements.installed
 
 # This script installs APK and Pip prerequisites on container start, or ONBUILD. Notes:
 #   * Reads the -a flags and /apk-requirements.txt for install requests
@@ -115,3 +116,5 @@ RUN python -m pip install --upgrade setuptools
 #   * Reads the -p flags and /requirements.txt for Pip packages
 #   * Reads the -r flag to specify a different file path for /requirements.txt
 ENTRYPOINT ["/usr/bin/dumb-init", "bash", "/entrypoint.sh"]
+
+
