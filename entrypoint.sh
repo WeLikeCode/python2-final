@@ -145,5 +145,6 @@ if [[ ! -z "$@" ]]; then
 	$@
 else
 	# Otherwise, default to running 'python'.
-	python
+	#python
+	/bin/bash
 fi
