@@ -17,13 +17,17 @@ Usage: $0 [-a -b -p -A -B -P -r -q -x] [--] <your command line>
  -a : APK requirement. Can be specified multiple times.
  -b : APK build requirement. These will be removed at the end to save space.
  -p : Pip requirement. Can be specified multiple times.
+
  -A : apk-requirements.txt file location,   default: /apk-requirements.txt
  -B : build-requirements.txt file location, default: /build-requirements.txt
  -P : requirements.txt file location,       default: /requirements.txt
  -r : same as above, just to match Pip's -r flag.
+
  -q : quiet, doesn't print anything at all.
  -x : Bash debug mode. Extremely verbose!
+
  -- : Separator for flags and your command
+
  Whatever you provide after your arguments is run at the end.
 EOF
   exit 1
@@ -146,5 +150,5 @@ if [[ ! -z "$@" ]]; then
 else
 	# Otherwise, default to running 'python'.
 	#python
-	/bin/bash
+  /bin/bash
 fi
