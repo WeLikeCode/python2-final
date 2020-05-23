@@ -86,18 +86,8 @@ if [ $VERBOSITY -eq 0 ]; then
 fi
 
 ## Hack, make a script check if dependencies are installed.
-# echo "Deleting req marker"
-# rm -v -f /requirements.installed 
-
-python /requirements_ok.py "$REQFILE"
-
-# if [ $? -eq 0 ];
-# then
-#   echo "$? as a result of operation"
-#   touch  /requirements.installed ;
-# fi
-
-echo "" ;
+echo "Deleting req marker"
+rm -v -f /requirements.installed 
 
 # Don't do anything if we've already done this.
 if [[ ! -f /requirements.installed ]]; then
@@ -157,15 +147,4 @@ else
 	vlog "/requirements.installed file exists-- skipping requirements installs."
 fi
 
-echo $@ ; 
-
-
-if [[ ! -z "$@" ]]; then
-	# If the user has given us a command, run it.
-  ### You actualy need to put exec and "" , if you are noob, you'll put just $@
-	exec "$@"
-else
-	# Otherwise, default to running 'python'.
-	python
-  #/bin/bash
-fi
+exit 0;

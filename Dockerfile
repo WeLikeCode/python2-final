@@ -111,6 +111,14 @@ RUN python -m pip install --upgrade pip
 RUN python -m pip install --upgrade setuptools
 RUN rm -f /requirements.installed
 
+COPY requirements_ok.py /requirements_ok.py
+
+# Copy in the entrypoint script -- this installs prerequisites on container start.
+COPY helper.sh /helper.sh
+
+# set proper permission to run entrypoint script
+RUN chmod a+x /helper.sh
+
 # This script installs APK and Pip prerequisites on container start, or ONBUILD. Notes:
 #   * Reads the -a flags and /apk-requirements.txt for install requests
 #   * Reads the -b flags and /build-requirements.txt for build packages -- removed when build is complete

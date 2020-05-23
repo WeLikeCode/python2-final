@@ -1,0 +1,4 @@
+.idea
+__cache__
+venv
+f*.txt

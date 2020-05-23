@@ -5,12 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "Python: Current File - with one parameter",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/requirements_ok.py",
+            "args": [
+                "f1.txt"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Current File (Integrated Terminal)",
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal",
-            "args": ["f1.txt", "f2.txt"]
+            "args": [
+                "f1.txt",
+                "f2.txt"
+            ],
+            "console": "integratedTerminal"
         }
     ]
 }
