@@ -43,6 +43,9 @@ if __name__ == "__main__":
 
     if return_exit_code > 0 :
         import os
-        os.remove("/requirements.installed")
+        try:
+            os.remove("/requirements.installed")
+        except:
+            pass
 
     #sys.exit(return_exit_code)
